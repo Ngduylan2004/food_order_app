@@ -61,8 +61,10 @@ class _SplashScreenState extends State<SplashScreen>
                     const SizedBox(height: 10),
                     Text(
                       'Welcome to recipe passport where you\n virtually travel the world through recipes.',
-                      style: context.bodyLarge500Style
-                          ?.copyWith(color: Colors.white),
+                      style: context.bodyLarge500Style?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          letterSpacing: 1.2),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 40),

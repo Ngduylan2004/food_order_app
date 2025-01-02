@@ -17,24 +17,24 @@ class RecipeDetailScreen extends StatefulWidget {
 }
 
 class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
-  List<Map<String, dynamic>> media = [
-    {
-      'type': 'image',
-      'url': 'assets/image/food/Chicken.png',
-    },
-    {
-      'type': 'video',
-      'url': 'assets/image/food/Chicken.png',
-    },
-    {
-      'type': 'image',
-      'url': 'assets/image/food/Chicken.png',
-    },
-    {
-      'type': 'video',
-      'url': 'assets/image/food/Chicken.png',
-    },
-  ];
+  // List<Map<String, dynamic>> media = [
+  //   {
+  //     'type': 'image',
+  //     'url': 'assets/image/food/Chicken.png',
+  //   },
+  //   {
+  //     'type': 'video',
+  //     'url': 'assets/image/food/Chicken.png',
+  //   },
+  //   {
+  //     'type': 'image',
+  //     'url': 'assets/image/food/Chicken.png',
+  //   },
+  //   {
+  //     'type': 'video',
+  //     'url': 'assets/image/food/Chicken.png',
+  //   },
+  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,14 +43,14 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
         leading: Padding(
-          padding: const EdgeInsets.only(top: 16),
+          padding: const EdgeInsets.only(top: 0),
           child: IconButton(
             onPressed: () {
               context.pop();
             },
             icon: const Icon(
               Icons.arrow_back,
-              size: 32,
+              size: 24,
             ),
           ),
         ),
@@ -58,7 +58,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(
-                top: 16, right: 20), // Adjust padding as needed
+                top: 0, right: 20), // Adjust padding as needed
             child: InkWell(
               onTap: () {
                 context.pushNamed('image-detail');
@@ -84,9 +84,9 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                 width:
                     double.infinity, // Ensure container fills available width
                 height: 330, // Adjust height as needed
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(media[0]['url']),
+                    image: AssetImage('assets/image/food/Chicken.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -94,9 +94,10 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                   // Center icon within the container
                   child: IconButton(
                     onPressed: () {},
-                    icon: const Icon(
-                      Icons.play_arrow,
-                      size: 10,
+                    icon: SvgPicture.asset(
+                      'assets/image/icons/Back Button.svg',
+                      width: 40,
+                      height: 40,
                     ),
                   ),
                 ),
@@ -191,13 +192,12 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             Align(
               alignment: Alignment.center,
               child: SizedBox(
-                width: MediaQuery.sizeOf(context).width - 45,
+                width: MediaQuery.sizeOf(context).width - 40,
                 child: ButtonsTabBar(
                   radius: 30,
-
                   height: 50, // Chiều cao của các tab
                   contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 26), // padding cho tab
+                      horizontal: 24), // padding cho tab
                   backgroundColor: ThemeColor.primary,
 
                   borderColor: ThemeColor.primary,
@@ -219,7 +219,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 12,
             ),
             const Expanded(
               child: Padding(

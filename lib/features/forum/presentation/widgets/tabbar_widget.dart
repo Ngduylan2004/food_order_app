@@ -16,17 +16,20 @@ class TabbarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox(
-        height: 40,
+        height: 42,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor:
-                isActive ? ThemeColor.primary : ThemeColor.lightGray,
+                isActive ? ThemeColor.primary : const Color(0xffF5F6F5),
             padding: const EdgeInsets.all(0),
           ),
           onPressed: () => ontap(),
           child: Text(
             text,
-            style: context.bodyRegular500Style?.copyWith(color: Colors.white),
+            style: isActive
+                ? context.bodyRegular500Style?.copyWith(color: Colors.white)
+                : context.bodyRegular500Style?.copyWith(
+                    color: ThemeColor.lightBlack, fontWeight: FontWeight.w400),
           ),
         ),
       ),

@@ -27,17 +27,19 @@ class AppOulineButton extends StatelessWidget {
         onPressed: onPressed,
         child: icon == null
             ? Text(text,
-                style: context.bodyLarge500Style
-                    ?.copyWith(color: ThemeColor.lightBlack))
+                style: context.bodyRegular500Style
+                    ?.copyWith(color: ThemeColor.black))
             : Row(
                 mainAxisSize:
                     MainAxisSize.min, // giới hạn kích thước của button
                 children: [
-                  Icon(icon, color: ThemeColor.lightBlack),
-                  const SizedBox(width: 7),
                   Text(text,
-                      style: context.bodyLarge500Style
-                          ?.copyWith(color: ThemeColor.lightBlack)),
+                      style: context.bodyRegular500Style
+                          ?.copyWith(color: ThemeColor.black)),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Icon(icon, color: ThemeColor.primary),
                 ],
               ),
       ),

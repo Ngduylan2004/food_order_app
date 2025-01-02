@@ -17,6 +17,8 @@ class LoginGoogleSuccess extends LoginState {}
 
 class LoginLoading extends LoginState {}
 
+class LoginResetPasswordSuccess extends LoginState {}
+
 class LoginState {}
 
 class LoginSuccess extends LoginState {}

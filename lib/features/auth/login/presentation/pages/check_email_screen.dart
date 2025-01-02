@@ -11,7 +11,7 @@ class CheckEmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding:
               const EdgeInsets.symmetric(horizontal: 20.0, vertical: 120.0),

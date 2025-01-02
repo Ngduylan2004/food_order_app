@@ -10,3 +10,9 @@ class LoginEmailEvent extends LoginEvent {
 class LoginEvent {}
 
 class LoginGoogleEvent extends LoginEvent {}
+
+class LoginResetPasswordEvent extends LoginEvent {
+  final String email;
+
+  LoginResetPasswordEvent({required this.email});
+}

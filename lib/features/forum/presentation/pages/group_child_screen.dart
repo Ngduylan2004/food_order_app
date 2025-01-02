@@ -67,7 +67,10 @@ class GroupChildScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20),
             child: IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.search, size: 24),
+              icon: SvgPicture.asset(
+                'assets/image/icons/akar-icons_search.svg',
+                color: ThemeColor.lightBlack,
+              ),
             ),
           ),
           Padding(

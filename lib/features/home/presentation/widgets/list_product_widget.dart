@@ -61,11 +61,11 @@ class ListProductWidget extends StatelessWidget {
                   children: [
                     Text('SPAIN ',
                         style: context.bodySmall500Style?.copyWith(
-                          color: Colors.black,
+                          color: ThemeColor.lightBlack,
                         )),
                     Text('Paella (Pan-seared rice)',
                         style: context.heading7Style?.copyWith(
-                          color: Colors.black,
+                          color: ThemeColor.black,
                         )),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,7 +73,7 @@ class ListProductWidget extends StatelessWidget {
                         Text(
                           'Lunch|60m ',
                           style: context.bodySmall500Style?.copyWith(
-                            color: Colors.black,
+                            color: ThemeColor.lightBlack,
                           ),
                         ),
                         Row(

@@ -35,5 +35,19 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         emit(RegisterError(errorMessage: 'đã xảy ra lỗi'));
       }
     });
+    // xli stepnext dk
+    on<RegisterStepEvent>((event, emit) async {
+      if (event.step < 5) {
+        final steps = event.step + 1;
+        emit(RegisterStep(step: steps));
+      }
+    });
+    on<RegisterStepBackEvent>((event, emit) {
+      if (state is RegisterStep && event.step > 0) {
+        final steps =
+            (state as RegisterStep).step - 1; // Trừ bước từ state hiện tại
+        emit(RegisterStep(step: steps)); // Phát sự kiện bước lùi
+      }
+    });
   }
 }

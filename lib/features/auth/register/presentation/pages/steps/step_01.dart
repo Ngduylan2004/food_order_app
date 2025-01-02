@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_order_app/core/component/button/app_ouline_button.dart';
 import 'package:food_order_app/core/component/button/app_solid_button.dart';
 import 'package:food_order_app/core/theme/colors/theme_color.dart';
 import 'package:food_order_app/core/theme/text/app_text_theme.dart';
-import 'package:food_order_app/features/auth/register/presentation/widgets/steps_acount/steps.dart';
-import 'package:go_router/go_router.dart';
+import 'package:food_order_app/features/auth/register/presentation/bloc/register_bloc.dart';
 
 class Step01 extends StatelessWidget {
   const Step01({super.key});
@@ -12,92 +12,106 @@ class Step01 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
-          child: Column(
-            children: [
-              const Steps(currentIndex: 1),
-              const SizedBox(height: 16),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text.rich(
-                        TextSpan(
-                          text: 'Whats your preferred ',
-                          style: context.heading4Style,
-                          children: [
-                            TextSpan(
-                              text: '\nlanguage for the app?',
-                              style: context.heading4Style,
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'Select the language that youd prefer to use while exploring Recipe Passport.',
-                        style: context.body2XLargeStyle
-                            ?.copyWith(color: ThemeColor.lightBlack),
-                      ),
-                      const SizedBox(height: 24),
-                      const Wrap(
-                        spacing: 5, // Khoảng cách giữa các phần tử
-                        runSpacing: 8, // Khoảng cách giữa các dòng
-                        alignment: WrapAlignment
-                            .start, // Căn chỉnh các phần tử theo chiều ngang
-                        children: [
-                          AppOulineButton(
-                            text: 'English',
-                            icon: Icons.check_circle_outline,
-                          ),
-                          AppOulineButton(
-                            text: 'Spanish',
-                            icon: Icons.check_circle,
-                          ),
-                          AppOulineButton(
-                            text: 'French',
-                            icon: Icons.check_circle,
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 24),
-                      Text(
-                        'Others (Please Specify)',
-                        style: context.bodyLarge500Style
-                            ?.copyWith(color: ThemeColor.lightBlack),
-                      ),
-                      const SizedBox(height: 8),
-                      SizedBox(
-                        width: 203,
-                        height: 36,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.all(20),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text.rich(
+              TextSpan(
+                text: 'Whats your preferred ',
+                style: context.heading4Style,
+                children: [
+                  TextSpan(
+                    text: '\nlanguage for the app?',
+                    style: context.heading4Style,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Select the language that youd prefer to use while exploring Recipe Passport.',
+              style: context.bodyLarge500Style?.copyWith(
+                  color: const Color(0xFF354D35), fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(height: 24),
+            const Wrap(
+              spacing: 5, // Khoảng cách giữa các phần tử
+              runSpacing: 8, // Khoảng cách giữa các dòng
+              alignment:
+                  WrapAlignment.start, // Căn chỉnh các phần tử theo chiều ngang
+              children: [
+                AppOulineButton(
+                  text: 'English',
+                  icon: Icons.check_circle_outline,
+                ),
+                AppOulineButton(
+                  text: 'Spanish',
+                  icon: Icons.check_circle,
+                ),
+                AppOulineButton(
+                  text: 'French',
+                  icon: Icons.check_circle,
+                )
+              ],
+            ),
+            const SizedBox(height: 24),
+            Text(
+              'Others (Please Specify)',
+              style: context.bodyLarge500Style?.copyWith(
+                  color: ThemeColor.black, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              width: 205,
+              height: 40,
+              child: TextField(
+                style: context.bodyLarge500Style?.copyWith(
+                  color: ThemeColor.lightBlack,
+                  fontSize:
+                      14, // Kích thước chữ trong TextField (nội dung người dùng nhập vào)
+                ),
+                decoration: InputDecoration(
+                  labelText: 'Other',
+                  labelStyle: context.bodySmall500Style?.copyWith(
+                    color: ThemeColor.lightBlack,
+                    fontSize: 12, // Kích thước chữ trong labelText
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10), // Điều chỉnh khoảng cách trong TextField
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(100),
+                    borderSide: const BorderSide(color: ThemeColor.lightGray),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(100),
+                    borderSide: const BorderSide(color: ThemeColor.primary),
                   ),
                 ),
               ),
-              Center(
-                child: AppSolidButton(
-                  onPressed: () {
-                    context.goNamed('step-02');
-                  },
-                  width: double.infinity,
-                  height: 52,
-                  text: 'Next Step',
-                ),
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 150),
+            BlocConsumer<RegisterBloc, RegisterState>(
+              listener: (context, state) {
+                // TODO: implement listener
+              },
+              builder: (context, state) {
+                return Center(
+                  child: AppSolidButton(
+                    onPressed: () {
+                      context
+                          .read<RegisterBloc>()
+                          .add(RegisterStepEvent(step: 1));
+                    },
+                    width: double.infinity,
+                    height: 52,
+                    text: 'Next Step',
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

@@ -10,3 +10,13 @@ class RegisterEventNextStep extends RegisterEvent {
   RegisterEventNextStep(
       {required this.fullName, required this.email, required this.password});
 }
+
+class RegisterStepBackEvent extends RegisterEvent {
+  final int step;
+  RegisterStepBackEvent({required this.step});
+}
+
+class RegisterStepEvent extends RegisterEvent {
+  final int step;
+  RegisterStepEvent({required this.step});
+}

@@ -23,6 +23,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         emit(LoginFailure(message: 'Đăng nhập thất bại'));
       }
     });
+    // xli quên mật khẩu
+    on<LoginResetPasswordEvent>((event, emit) async {
+      try {
+        await _auth.sendPasswordResetEmail(email: event.email);
+        emit(LoginResetPasswordSuccess());
+      } catch (e) {
+        emit(LoginFailure(
+            message: 'Gửi email thất bại. Vui lòng kiểm tra lại.'));
+      }
+    });
+
     // xli đăng nhập bằng gg
     on<LoginGoogleEvent>((event, emit) async {
       try {

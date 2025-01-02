@@ -150,8 +150,8 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Recent Recipes', style: context.heading5Style),
-                  Text('View All',
+                  Text('Recommended', style: context.heading5Style),
+                  Text('View all',
                       style: context.bodyLarge500Style
                           ?.copyWith(color: ThemeColor.primary)),
                 ],

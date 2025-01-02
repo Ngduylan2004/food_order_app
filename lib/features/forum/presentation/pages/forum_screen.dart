@@ -60,7 +60,7 @@ class _ForumScreenState extends State<ForumScreen> {
                   width: double.infinity,
                   height: 48,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 235, 233, 233),
+                    color: const Color(0xffF5F6F5),
                     borderRadius: BorderRadius.circular(46),
                   ),
                   child: Padding(

@@ -34,7 +34,7 @@ class ExploreScreen extends StatelessWidget {
                   fillColor: const Color(0xfff5f6f5),
                   filled: true, //để đặt màu nền
                   contentPadding: const EdgeInsets.symmetric(
-                      vertical: 20), //khoảng cách giữa nội dung và viền
+                      vertical: 18), //khoảng cách giữa nội dung và viền
                   hintText: 'Search anything...',
                   hintStyle: context.bodyRegular500Style?.copyWith(
                     color: ThemeColor.lightBlack,

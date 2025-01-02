@@ -9,6 +9,11 @@ class RegisterLoading extends RegisterState {}
 
 class RegisterState {}
 
+class RegisterStep extends RegisterState {
+  final int step;
+  RegisterStep({required this.step});
+}
+
 class RegisterSuccess extends RegisterState {
   final String fullName;
   final String email;

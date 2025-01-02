@@ -38,8 +38,9 @@ class AllGroupWidget extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: '22.1k Members',
-                          style: context.bodyLarge500Style
-                              ?.copyWith(color: ThemeColor.lightGray),
+                          style: context.bodyLarge500Style?.copyWith(
+                              color: ThemeColor.lightBlack,
+                              fontWeight: FontWeight.w400),
                         ),
                       ],
                     ),

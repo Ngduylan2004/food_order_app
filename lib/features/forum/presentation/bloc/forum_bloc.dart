@@ -5,8 +5,6 @@ part 'forum_state.dart';
 
 class ForumBloc extends Bloc<ForumEvent, ForumState> {
   ForumBloc() : super(ForumState()) {
-    on<ForumEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<ForumEvent>((event, emit) {});
   }
 }

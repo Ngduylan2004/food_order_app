@@ -5,8 +5,6 @@ part 'detail_state.dart';
 
 class DetailBloc extends Bloc<DetailEvent, DetailState> {
   DetailBloc() : super(DetailState()) {
-    on<DetailEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<DetailEvent>((event, emit) {});
   }
 }

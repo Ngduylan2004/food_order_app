@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_app/core/component/button/app_solid_button.dart';
-import 'package:food_order_app/core/component/textFiled/auth_textFiled.dart';
+import 'package:food_order_app/core/component/textFiled/auth_text_filed.dart';
 import 'package:food_order_app/core/theme/colors/theme_color.dart';
 import 'package:food_order_app/core/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/auth/login/presentation/widgets/reset_widget/reset_widget.dart';
@@ -36,6 +36,14 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                       ?.copyWith(color: ThemeColor.lightBlack)),
               const SizedBox(height: 48),
               AuthTextFiled(
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Password không được để trống';
+                  } else if (value.length < 8) {
+                    return 'Password phải có ít nhất 8 ký tự';
+                  }
+                  return null;
+                },
                 onTap: () {
                   setState(() {
                     isPassword = !isPassword;

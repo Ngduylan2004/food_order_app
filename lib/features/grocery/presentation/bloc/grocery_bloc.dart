@@ -26,7 +26,6 @@ class GroceryBloc extends Bloc<GroceryEvent, GroceryState> {
 
       displayItems.addAll(listGrocery.sublist(0, itemTotal));
       emit(GroceryState(listGrocery: List.from(displayItems)));
-      print('displayItems1: ${displayItems.length}');
     });
 
     // Tải thêm dữ liệu
@@ -50,7 +49,7 @@ class GroceryBloc extends Bloc<GroceryEvent, GroceryState> {
           displayItems.length + itemsToLoad,
         ),
       );
-      print('displayItems2: ${displayItems.length}');
+      // print('displayItems2: ${displayItems.length}');
       emit(GroceryState(listGrocery: displayItems, isLoading: false));
     });
   }

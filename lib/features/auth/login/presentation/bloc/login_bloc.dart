@@ -40,7 +40,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         await Future.delayed(const Duration(seconds: 2));
         emit(LoginLoading());
         // ts xoá tk trên firebase r mà khi đn gg thì nó vẫn đăng nhập đc
-        // await _googleSignIn.signOut(); // xóa thông tin đăng nhập trước đó
+        await _googleSignIn.signOut(); // xóa thông tin đăng nhập trước đó
         final userGoogle = await _googleSignIn.signIn();
         if (userGoogle != null) {
           //xác thực thông tin đăng nhập
@@ -49,7 +49,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           //tạo credential xác thực thông tin trả về idToken và accessToken
           final credential = GoogleAuthProvider.credential(
               idToken: googleAuth.idToken, accessToken: googleAuth.accessToken);
-          print(credential);
+
           //đăng nhập bằng firebase
           await _auth.signInWithCredential(credential);
 

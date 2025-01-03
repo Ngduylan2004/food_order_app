@@ -9,6 +9,7 @@ class AuthTextFiled extends StatelessWidget {
   final String label;
   final bool obscureText;
   final Function onTap;
+  final String? Function(String?) validator;
 
   const AuthTextFiled({
     super.key,
@@ -18,6 +19,7 @@ class AuthTextFiled extends StatelessWidget {
     required this.label,
     required this.obscureText,
     required this.onTap,
+    required this.validator,
   });
 
   @override
@@ -25,13 +27,18 @@ class AuthTextFiled extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 52,
-      child: TextField(
+      child: TextFormField(
+        validator: validator,
+
         obscureText: obscureText,
         controller: controller,
         style: context.bodyRegular500Style?.copyWith(
             fontSize: 16,
             color: ThemeColor.lightBlack), // Đặt mặc định cho kiểu chữ nhập vào
         decoration: InputDecoration(
+          errorStyle: context.bodySmall500Style?.copyWith(
+            color: ThemeColor.red,
+          ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(100),
             borderSide: BorderSide.none,

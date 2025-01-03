@@ -49,9 +49,7 @@ class Step02 extends StatelessWidget {
             ),
             const SizedBox(height: 200),
             BlocConsumer<RegisterBloc, RegisterState>(
-              listener: (context, state) {
-                // TODO: implement listener
-              },
+              listener: (context, state) {},
               builder: (context, state) {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

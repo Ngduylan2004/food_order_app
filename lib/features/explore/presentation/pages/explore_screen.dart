@@ -47,7 +47,10 @@ class ExploreScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(12.0),
                     child: SvgPicture.asset(
                       'assets/image/icons/akar-icons_search.svg',
-                      color: ThemeColor.lightBlack,
+                      colorFilter: const ColorFilter.mode(
+                        ThemeColor.lightBlack,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                   suffixIcon: Padding(

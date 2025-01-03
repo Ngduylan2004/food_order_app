@@ -5,8 +5,6 @@ part 'explore_state.dart';
 
 class ExploreBloc extends Bloc<ExploreEvent, ExploreState> {
   ExploreBloc() : super(ExploreState()) {
-    on<ExploreEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<ExploreEvent>((event, emit) {});
   }
 }

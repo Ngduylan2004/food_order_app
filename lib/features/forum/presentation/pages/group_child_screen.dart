@@ -69,7 +69,10 @@ class GroupChildScreen extends StatelessWidget {
               onPressed: () {},
               icon: SvgPicture.asset(
                 'assets/image/icons/akar-icons_search.svg',
-                color: ThemeColor.lightBlack,
+                colorFilter: const ColorFilter.mode(
+                  ThemeColor.lightBlack,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_app/core/theme/colors/theme_color.dart';
 import 'package:food_order_app/core/theme/text/app_text_theme.dart';
-import 'package:food_order_app/features/home/presentation/widgets/carouse_slider.dart';
 import 'package:food_order_app/features/home/presentation/widgets/image_stack_widget.dart';
 import 'package:food_order_app/features/home/presentation/widgets/list_product_widget.dart';
+import 'package:food_order_app/features/home/presentation/widgets/slider_widget.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -142,7 +142,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              const carouse(),
+              const SliderWidget(),
               const SizedBox(height: 24),
               // Image Stack Widget
               const ImageStackWidget(),

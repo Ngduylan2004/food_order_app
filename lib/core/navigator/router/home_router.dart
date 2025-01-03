@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:food_order_app/core/enum/router_enum/router_enum.dart';
 import 'package:food_order_app/features/home/presentation/pages/home_screen.dart';
 import 'package:go_router/go_router.dart';
 
-List<RouteBase> home_router = [
+List<RouteBase> homeRouter = [
   GoRoute(
-    path: '/home',
-    name: 'home',
+    path: RouterEnum.home.path,
+    name: RouterEnum.home.name,
     builder: (BuildContext context, GoRouterState state) {
       return const HomeScreen();
     },

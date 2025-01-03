@@ -22,7 +22,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
     const GroceryScreen(),
     ExploreScreen(),
     const ForumScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -49,7 +49,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                 'assets/image/icons/cutlery 4.svg',
                 width: 24,
                 height: 24,
-                color: _currentIndex == 0 ? ThemeColor.primary : Colors.grey,
+                colorFilter: ColorFilter.mode(
+                  _currentIndex == 0 ? ThemeColor.primary : Colors.grey,
+                  BlendMode.srcIn,
+                ),
               ),
               title: 'Recipes',
             ),
@@ -58,7 +61,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                 'assets/image/icons/cil_list.svg',
                 width: 24,
                 height: 24,
-                color: _currentIndex == 1 ? ThemeColor.primary : Colors.grey,
+                colorFilter: ColorFilter.mode(
+                  _currentIndex == 1 ? ThemeColor.primary : Colors.grey,
+                  BlendMode.srcIn,
+                ),
               ),
               title: 'Grocery',
             ),
@@ -78,7 +84,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                 'assets/image/icons/fluent_chat-32-regular.svg',
                 width: 24,
                 height: 24,
-                color: _currentIndex == 3 ? ThemeColor.primary : Colors.grey,
+                colorFilter: ColorFilter.mode(
+                  _currentIndex == 3 ? ThemeColor.primary : Colors.grey,
+                  BlendMode.srcIn,
+                ),
               ),
               title: 'Forum',
             ),
@@ -87,7 +96,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                 'assets/image/icons/profile.svg',
                 width: 24,
                 height: 24,
-                color: _currentIndex == 4 ? ThemeColor.primary : Colors.grey,
+                colorFilter: ColorFilter.mode(
+                  _currentIndex == 4 ? ThemeColor.primary : Colors.grey,
+                  BlendMode.srcIn,
+                ),
               ),
               title: 'Profile',
             ),

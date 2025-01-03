@@ -91,9 +91,7 @@ class Step05 extends StatelessWidget {
           ]),
           const SizedBox(height: 150),
           BlocConsumer<RegisterBloc, RegisterState>(
-            listener: (context, state) {
-              // TODO: implement listener
-            },
+            listener: (context, state) {},
             builder: (context, state) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

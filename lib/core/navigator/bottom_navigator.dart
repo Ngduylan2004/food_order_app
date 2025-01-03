@@ -23,7 +23,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
     const GroceryScreen(),
     ExploreScreen(),
     const ForumScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -55,13 +55,16 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   List<PersistentBottomNavBarItem> _buildNavBarItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: SvgPicture.asset('assets/image/icons/cutlery 4.svg',
-            width: 24,
-            height: 24,
-            color:
-                _currentIndex == 0 ? ThemeColor.primary : ThemeColor.lightBlack
-            // Thay đổi màu sắc khi chọn tab
-            ),
+        icon: SvgPicture.asset(
+          'assets/image/icons/cutlery 4.svg',
+          width: 24,
+          height: 24,
+          colorFilter: ColorFilter.mode(
+            _currentIndex == 0 ? ThemeColor.primary : ThemeColor.lightBlack,
+            BlendMode.srcIn,
+          ),
+          // Thay đổi màu sắc khi chọn tab
+        ),
         title: 'Recipes',
         textStyle: TextStyle(
           fontSize: 12, // Kích thước chữ
@@ -79,9 +82,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           'assets/image/icons/cil_list.svg',
           width: 24,
           height: 24,
-          color: _currentIndex == 1
-              ? ThemeColor.primary
-              : ThemeColor.lightBlack, // Thay đổi màu sắc khi chọn tab
+          colorFilter: ColorFilter.mode(
+            _currentIndex == 1 ? ThemeColor.primary : ThemeColor.lightBlack,
+            BlendMode.srcIn,
+          ),
         ),
         title: 'Grocery',
         textStyle: TextStyle(
@@ -100,9 +104,6 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           'assets/image/icons/akar-icons_search.svg',
           width: 24,
           height: 24,
-          color: _currentIndex == 2
-              ? ThemeColor.white
-              : ThemeColor.white, // Thay đổi màu sắc khi chọn tab
         ),
         title: 'Explore',
         textStyle: TextStyle(
@@ -121,9 +122,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           'assets/image/icons/fluent_chat-32-regular.svg',
           width: 24,
           height: 24,
-          color: _currentIndex == 3
-              ? ThemeColor.primary
-              : ThemeColor.lightBlack, // Thay đổi màu sắc khi chọn tab
+          colorFilter: ColorFilter.mode(
+            _currentIndex == 3 ? ThemeColor.primary : ThemeColor.lightBlack,
+            BlendMode.srcIn,
+          ),
         ),
         title: 'Forum',
         textStyle: TextStyle(
@@ -142,9 +144,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           'assets/image/icons/profile.svg',
           width: 24,
           height: 24,
-          color: _currentIndex == 4
-              ? ThemeColor.primary
-              : ThemeColor.lightBlack, // Thay đổi màu sắc khi chọn tab
+          colorFilter: ColorFilter.mode(
+            _currentIndex == 4 ? ThemeColor.primary : ThemeColor.lightBlack,
+            BlendMode.srcIn,
+          ),
         ),
         title: 'Profile',
         textStyle: TextStyle(

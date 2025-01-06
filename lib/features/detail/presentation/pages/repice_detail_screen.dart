@@ -1,8 +1,8 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/detail/presentation/widgets/share_widget/social_share.dart';
 import 'package:food_order_app/features/detail/presentation/widgets/tabbar01_widget.dart';
 import 'package:food_order_app/features/detail/presentation/widgets/tabbar02_widget.dart';

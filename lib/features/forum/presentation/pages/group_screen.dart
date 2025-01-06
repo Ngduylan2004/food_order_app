@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/forum/presentation/widgets/groups_widget/all_group_widget.dart';
 
 class GroupScreen extends StatelessWidget {
@@ -25,7 +26,7 @@ class GroupScreen extends StatelessWidget {
             )
           ],
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: Dimens.marginVertical),
         const AllGroupWidget(),
       ],
     );

@@ -3,8 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_order_app/core/component/button/app_solid_button.dart';
 import 'package:food_order_app/core/component/social/social.dart';
 import 'package:food_order_app/core/component/textFiled/auth_text_filed.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/auth/register/presentation/bloc/register_bloc.dart';
 import 'package:food_order_app/features/auth/register/presentation/pages/register_steps_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -35,7 +36,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 key: _formKey,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 20.0, vertical: 120.0),
+                    horizontal: Dimens.paddingHorizontal,
+                    vertical: Dimens.paddingVertical,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -52,13 +55,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: Dimens.marginVertical),
 
                       Text('Please enter your account details below!',
                           style: context.bodyLarge500Style?.copyWith(
                             color: ThemeColor.lightBlack,
                           )),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: Dimens.marginVerticalLarge),
 
                       AuthTextFiled(
                         validator: (value) {
@@ -73,11 +76,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         label: 'Full Name',
                         prefixIcon: Icons.person,
                       ),
-                      const SizedBox(height: 16),
+                      const SizedBox(height: Dimens.marginVerticalSmall),
                       AuthTextFiled(
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Email không được để trống';
+                          if (value == null ||
+                              value.isEmpty ||
+                              !RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+                                  .hasMatch(value)) {
+                            return 'Email không đúng định dạng';
                           }
                           return null;
                         },
@@ -87,7 +93,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         label: 'Email',
                         prefixIcon: Icons.email,
                       ),
-                      const SizedBox(height: 16),
+                      const SizedBox(height: Dimens.marginVerticalSmall),
                       AuthTextFiled(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -108,7 +114,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         prefixIcon: Icons.lock,
                         suffixIcon: Icons.visibility_outlined,
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: Dimens.marginVerticalSmall),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -128,7 +134,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   color: ThemeColor.primary,
                                 )),
                           ),
-                          InkWell(
+                          GestureDetector(
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -166,7 +172,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: const SizedBox(),
                       ),
 
-                      const SizedBox(height: 16),
+                      const SizedBox(height: Dimens.marginVerticalSmall),
 
                       Align(
                         alignment: Alignment.center,
@@ -188,7 +194,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      const SizedBox(height: Dimens.marginVerticalSmall),
 
                       Center(
                         child: SizedBox(
@@ -223,7 +229,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
 
-                      const SizedBox(height: 24),
+                      const SizedBox(height: Dimens.marginVerticalSmall),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -241,7 +247,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
 
-                      const SizedBox(height: 50),
+                      const SizedBox(height: Dimens.marginVerticalLarge),
                       InkWell(
                         onTap: () {
                           context.goNamed('login');

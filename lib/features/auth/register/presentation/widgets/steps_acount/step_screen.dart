@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/auth/register/presentation/bloc/register_bloc.dart';
 
 class StepScreen extends StatelessWidget {

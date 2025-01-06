@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/grocery/presentation/bloc/grocery_bloc.dart';
 
 class GroceryScreen extends StatefulWidget {
@@ -16,22 +17,26 @@ class _GroceryScreenState extends State<GroceryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ThemeColor.white,
       appBar: AppBar(
         scrolledUnderElevation: 0,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: ThemeColor.white,
+
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.only(
+                  top: Dimens.paddingVerticalDashboardTop),
               child: Text(
                 'Grocery',
                 style: context.heading4Style,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.only(
+                  top: Dimens.paddingVerticalDashboardTop),
               child: Container(
                 width: 44,
                 height: 44,
@@ -50,7 +55,9 @@ class _GroceryScreenState extends State<GroceryScreen> {
         toolbarHeight: 140, // Tùy chỉnh chiều cao AppBar nếu cần
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(
+            horizontal: Dimens.paddingHorizontalDashboard,
+            vertical: Dimens.paddingVerticalDashboard),
         child: Column(
           children: [
             TextField(
@@ -89,7 +96,7 @@ class _GroceryScreenState extends State<GroceryScreen> {
               ),
               enableInteractiveSelection: true,
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: Dimens.marginVerticalMedium),
             BlocBuilder<GroceryBloc, GroceryState>(
               builder: (context, state) {
                 if (state.listGrocery.isEmpty) {

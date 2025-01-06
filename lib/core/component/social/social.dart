@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
 
 class SocialButton extends StatelessWidget {
   final String image;

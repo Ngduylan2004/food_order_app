@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:go_router/go_router.dart';
 
 class MyRecipesWidget extends StatelessWidget {

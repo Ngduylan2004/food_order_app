@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/auth/register/presentation/bloc/register_bloc.dart';
 import 'package:food_order_app/features/auth/register/presentation/pages/steps/step_01.dart';
 import 'package:food_order_app/features/auth/register/presentation/pages/steps/step_02.dart';
@@ -25,7 +26,9 @@ class _RegisterStepsScreenState extends State<RegisterStepsScreen> {
       create: (context) => RegisterBloc()..add(RegisterStepEvent(step: 0)),
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 90),
+          padding: const EdgeInsets.symmetric(
+              horizontal: Dimens.paddingHorizontal,
+              vertical: Dimens.paddingVerticalStep),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -68,7 +71,7 @@ class _RegisterStepsScreenState extends State<RegisterStepsScreen> {
                   )
                 ],
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: Dimens.marginVerticalMedium),
               BlocConsumer<RegisterBloc, RegisterState>(
                 listener: (context, state) {},
                 builder: (context, state) {

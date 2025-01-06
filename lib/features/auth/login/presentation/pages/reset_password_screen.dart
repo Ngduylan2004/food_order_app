@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_app/core/component/button/app_solid_button.dart';
 import 'package:food_order_app/core/component/textFiled/auth_text_filed.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/auth/login/presentation/widgets/reset_widget/reset_widget.dart';
 import 'package:go_router/go_router.dart';
 

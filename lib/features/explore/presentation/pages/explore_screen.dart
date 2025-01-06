@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/explore/presentation/widgets/list_category_widget.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -11,20 +12,23 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ThemeColor.white,
       appBar: AppBar(
         scrolledUnderElevation: 0,
         toolbarHeight: 140,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: ThemeColor.white,
         title: Padding(
-          padding: const EdgeInsets.only(top: 60),
+          padding:
+              const EdgeInsets.only(top: Dimens.paddingVerticalDashboardTop),
           child: Text('Search', style: context.heading4Style),
         ),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          padding: const EdgeInsets.symmetric(
+              horizontal: Dimens.paddingHorizontalDashboard,
+              vertical: Dimens.paddingVerticalDashboard),
           child: Column(
             crossAxisAlignment:
                 CrossAxisAlignment.stretch, //căn đều các phần tử
@@ -65,9 +69,9 @@ class ExploreScreen extends StatelessWidget {
                 ),
                 enableInteractiveSelection: true,
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: Dimens.marginVerticalMedium),
               Text('Categories', style: context.heading5Style),
-              const SizedBox(height: 18),
+              const SizedBox(height: Dimens.marginVerticalMedium),
               const ListCategoryWidget(),
             ],
           ),

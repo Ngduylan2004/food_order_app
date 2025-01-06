@@ -4,8 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_order_app/core/component/button/app_ouline_button.dart';
 import 'package:food_order_app/core/component/button/app_solid_button.dart';
 import 'package:food_order_app/core/component/textFiled/auth_text_filed.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:food_order_app/features/profile/presentation/widgets/my_recipes_widget.dart';
 import 'package:food_order_app/features/profile/presentation/widgets/save_chanllenges_widget.dart';
@@ -22,22 +23,25 @@ class ProfileScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => ProfileBloc()..add(ProfileEvent()),
       child: Scaffold(
+        backgroundColor: ThemeColor.white,
         appBar: AppBar(
           scrolledUnderElevation: 0,
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.transparent,
+          backgroundColor: ThemeColor.white,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 60),
+                padding: const EdgeInsets.only(
+                    top: Dimens.paddingVerticalDashboardTop),
                 child: Text(
                   'Profile',
                   style: context.heading4Style,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60),
+                padding: const EdgeInsets.only(
+                    top: Dimens.paddingVerticalDashboardTop),
                 child: SvgPicture.asset(
                   'assets/image/icons/solar_settings-linear.svg',
                   width: 32,
@@ -50,8 +54,9 @@ class ProfileScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            padding: const EdgeInsets.symmetric(
+                horizontal: Dimens.paddingHorizontalDashboard,
+                vertical: Dimens.paddingVerticalDashboard),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -102,7 +107,7 @@ class ProfileScreen extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: Dimens.marginVerticalMedium),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -115,9 +120,9 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: Dimens.marginVerticalMedium),
                 const MyRecipesWidget(),
-                const SizedBox(height: 10),
+                const SizedBox(height: Dimens.marginVerticalMedium),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -130,9 +135,9 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: Dimens.marginVerticalMedium),
                 const SaveRecipesWidget(),
-                const SizedBox(height: 10),
+                const SizedBox(height: Dimens.marginVerticalMedium),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -145,7 +150,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: Dimens.marginVerticalMedium),
                 const SaveChanllengesWidget(),
               ],
             ),
@@ -166,7 +171,9 @@ class ProfileScreen extends StatelessWidget {
             width: 400,
             height: 300,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: Dimens.paddingHorizontalDashboard,
+                  vertical: Dimens.paddingVerticalDashboard),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -175,7 +182,7 @@ class ProfileScreen extends StatelessWidget {
                     'Edit Profile',
                     style: context.heading5Style,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: Dimens.marginVerticalMedium),
                   // Trường Full Name
                   AuthTextFiled(
                       controller: fullNameController,
@@ -186,7 +193,7 @@ class ProfileScreen extends StatelessWidget {
                       validator: (value) {
                         return null;
                       }),
-                  const SizedBox(height: 18),
+                  const SizedBox(height: Dimens.marginVerticalMedium),
                   // Trường Email
                   AuthTextFiled(
                       controller: emailController,
@@ -197,7 +204,7 @@ class ProfileScreen extends StatelessWidget {
                       validator: (value) {
                         return null;
                       }),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: Dimens.marginVerticalMedium),
                   // Nút Lưu
                   AppSolidButton(
                     onPressed: () {},

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
 import 'package:food_order_app/features/explore/presentation/pages/explore_screen.dart';
 import 'package:food_order_app/features/forum/presentation/pages/forum_screen.dart';
 import 'package:food_order_app/features/grocery/presentation/pages/grocery_screen.dart';

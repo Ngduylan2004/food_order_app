@@ -4,9 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_order_app/core/component/button/app_solid_button.dart';
 import 'package:food_order_app/core/component/social/social.dart';
 import 'package:food_order_app/core/component/textFiled/auth_text_filed.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
 // import 'package:food_order_app/core/component/button/app_solid_button.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/auth/login/presentation/bloc/login_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loading_overlay/loading_overlay.dart';
@@ -40,17 +41,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   key: _formKey,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0, vertical: 120.0),
+                        horizontal: Dimens.paddingHorizontal,
+                        vertical: Dimens.paddingVertical),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Welcome Back! 😊🤗🤗',
                             style: context.heading4Style),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: Dimens.marginVertical),
                         Text('Please enter your account details below!',
                             style: context.bodyLarge500Style
                                 ?.copyWith(color: ThemeColor.lightBlack)),
-                        const SizedBox(height: 50),
+                        const SizedBox(height: Dimens.marginVerticalLarge),
                         AuthTextFiled(
                           onTap: () {},
                           obscureText: false,
@@ -58,14 +60,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           label: 'Email',
                           prefixIcon: Icons.email,
                           validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Email không được để trống';
+                            if (value == null ||
+                                value.isEmpty ||
+                                !RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+                                    .hasMatch(value)) {
+                              return 'Email không đúng định dạng';
                             }
 
                             return null;
                           },
                         ),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: Dimens.marginHorizontalSmall),
                         AuthTextFiled(
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -86,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           suffixIcon: Icons.visibility_outlined,
                           obscureText: isPassword,
                         ),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: Dimens.marginVerticalSmall),
                         Align(
                           alignment: Alignment.centerRight, // Căn phải
                           child: InkWell(
@@ -120,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           child: const SizedBox(),
                         ),
-                        const SizedBox(height: 24),
+                        const SizedBox(height: Dimens.marginHorizontalMedium),
                         AppSolidButton(
                           width: double.infinity,
                           height: 55,
@@ -134,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             }
                           },
                         ),
-                        const SizedBox(height: 24),
+                        const SizedBox(height: Dimens.marginHorizontalMedium),
                         Center(
                           child: SizedBox(
                             width: double.infinity,
@@ -149,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     indent: 20, // Khoảng cách từ trái
                                   ),
                                 ),
-                                const SizedBox(width: 10),
+                                const SizedBox(width: Dimens.marginHorizontal),
                                 // Text
                                 Text(
                                   'Or login in with',
@@ -170,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 24),
+                        const SizedBox(height: Dimens.marginVerticalMedium),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -183,7 +188,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     .add(LoginGoogleEvent());
                               },
                             ),
-                            const SizedBox(width: 16),
+                            const SizedBox(width: Dimens.marginHorizontalSmall),
                             SocialButton(
                               image: 'assets/image/icons/facebook.png',
                               text: 'Facebook',

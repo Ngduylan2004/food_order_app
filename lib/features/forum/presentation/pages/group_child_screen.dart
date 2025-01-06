@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/forum/presentation/widgets/groups_widget/group_child_widget/group_child_widget.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +14,7 @@ class GroupChildScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: ThemeColor.white,
         toolbarHeight: 90,
         leading: Padding(
           padding: const EdgeInsets.only(
@@ -41,7 +42,7 @@ class GroupChildScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: Dimens.marginHorizontal),
               // Cập nhật lại Title và số thành viên
               Flexible(
                 child: Text.rich(

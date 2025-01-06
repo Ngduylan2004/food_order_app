@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/forum/presentation/pages/challenges_screen.dart';
 import 'package:food_order_app/features/forum/presentation/pages/featured_topic_screen.dart';
 import 'package:food_order_app/features/forum/presentation/pages/group_screen.dart';
@@ -17,24 +19,26 @@ class _ForumScreenState extends State<ForumScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: ThemeColor.white,
         appBar: AppBar(
           toolbarHeight: 140,
           scrolledUnderElevation: 0,
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.transparent,
+          backgroundColor: ThemeColor.white,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 60),
+                padding: const EdgeInsets.only(
+                    top: Dimens.paddingVerticalDashboardTop),
                 child: Text(
                   'Forum',
                   style: context.heading4Style,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60),
+                padding: const EdgeInsets.only(
+                    top: Dimens.paddingVerticalDashboardTop),
                 child: Container(
                   width: 44,
                   height: 44,
@@ -99,7 +103,7 @@ class _ForumScreenState extends State<ForumScreen> {
                   ),
                 ),
                 const SizedBox(
-                  height: 24,
+                  height: Dimens.marginVerticalMedium,
                 ),
                 _build(index),
               ],

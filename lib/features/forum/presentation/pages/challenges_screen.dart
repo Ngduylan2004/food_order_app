@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/forum/presentation/widgets/challenge_widget/user_image_widget.dart';
 
 class ChallengesScreen extends StatelessWidget {

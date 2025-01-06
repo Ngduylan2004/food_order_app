@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_order_app/core/component/button/app_ouline_button.dart';
 import 'package:food_order_app/core/component/button/app_solid_button.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/auth/register/presentation/bloc/register_bloc.dart';
 
 class Step01 extends StatelessWidget {
@@ -28,13 +29,13 @@ class Step01 extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: Dimens.marginVertical),
             Text(
               'Select the language that youd prefer to use while exploring Recipe Passport.',
               style: context.bodyLarge500Style?.copyWith(
                   color: const Color(0xFF354D35), fontWeight: FontWeight.w400),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: Dimens.marginVerticalMedium),
             const Wrap(
               spacing: 5, // Khoảng cách giữa các phần tử
               runSpacing: 8, // Khoảng cách giữa các dòng
@@ -55,13 +56,13 @@ class Step01 extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: Dimens.marginVerticalMedium),
             Text(
               'Others (Please Specify)',
               style: context.bodyLarge500Style?.copyWith(
                   color: ThemeColor.black, fontWeight: FontWeight.w400),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: Dimens.marginVertical),
             SizedBox(
               width: 205,
               height: 40,

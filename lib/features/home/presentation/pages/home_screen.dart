@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_order_app/core/theme/colors/theme_color.dart';
-import 'package:food_order_app/core/theme/text/app_text_theme.dart';
+import 'package:food_order_app/core/resources/dimens.dart';
+import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
+import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/home/presentation/widgets/image_stack_widget.dart';
 import 'package:food_order_app/features/home/presentation/widgets/list_product_widget.dart';
 import 'package:food_order_app/features/home/presentation/widgets/slider_widget.dart';
@@ -12,23 +13,26 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ThemeColor.white,
       appBar: AppBar(
         toolbarHeight: 140,
         scrolledUnderElevation: 0,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: ThemeColor.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.only(
+                  top: Dimens.paddingVerticalDashboardTop),
               child: Text(
                 'Explore Recipes',
                 style: context.heading4Style,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.only(
+                  top: Dimens.paddingVerticalDashboardTop),
               child: Container(
                 width: 44,
                 height: 44,
@@ -47,7 +51,9 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+          padding: const EdgeInsets.symmetric(
+              horizontal: Dimens.paddingHorizontalDashboard,
+              vertical: Dimens.paddingVerticalDashboard),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -125,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 24),
+              const SizedBox(height: Dimens.marginVerticalMedium),
               InkWell(
                   onTap: () {
                     context.goNamed('login');
@@ -141,12 +147,12 @@ class HomeScreen extends StatelessWidget {
                           ?.copyWith(color: ThemeColor.primary)),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: Dimens.marginVertical),
               const SliderWidget(),
-              const SizedBox(height: 24),
+              const SizedBox(height: Dimens.marginVerticalMedium),
               // Image Stack Widget
               const ImageStackWidget(),
-              const SizedBox(height: 24),
+              const SizedBox(height: Dimens.marginVerticalMedium),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -156,7 +162,7 @@ class HomeScreen extends StatelessWidget {
                           ?.copyWith(color: ThemeColor.primary)),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: Dimens.marginVerticalSmall),
               const ListProductWidget(),
             ],
           ),

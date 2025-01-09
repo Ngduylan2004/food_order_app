@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order_app/core/component/button/app_ouline_button.dart';
 import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
@@ -49,11 +50,11 @@ class AllGroupWidget extends StatelessWidget {
               ),
               // Nút tham gia nhóm
               AppOulineButton(
-                text: "Join",
+                text: context.tr('forum_screen.join_now'),
                 onPressed: () {
                   context.pushNamed('group-child');
                 },
-                width: 80,
+                width: 120,
                 height: 36,
               ),
             ],

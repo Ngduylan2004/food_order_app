@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_order_app/core/resources/dimens.dart';
@@ -132,7 +133,8 @@ class GroupChildScreen extends StatelessWidget {
                       contentPadding: const EdgeInsets.symmetric(
                           horizontal: 14,
                           vertical: 12), //khoảng cách giữa nội dung và viền
-                      hintText: 'Search anything...',
+                      hintText: context.tr('forum_screen.search_hint'),
+
                       hintStyle: context.bodyRegular500Style?.copyWith(
                         color: ThemeColor.lightBlack,
                       ),

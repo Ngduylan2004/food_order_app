@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
@@ -65,7 +66,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           ),
           // Thay đổi màu sắc khi chọn tab
         ),
-        title: 'Recipes',
+        title: context.tr('bottom_navigator.recipes'),
         textStyle: TextStyle(
           fontSize: 12, // Kích thước chữ
           fontWeight: FontWeight.bold, // Chữ in đậm
@@ -87,7 +88,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
             BlendMode.srcIn,
           ),
         ),
-        title: 'Grocery',
+        title: context.tr('bottom_navigator.grocery'),
         textStyle: TextStyle(
           fontSize: 12, // Kích thước chữ
           fontWeight: FontWeight.bold, // Chữ in đậm
@@ -105,7 +106,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           width: 24,
           height: 24,
         ),
-        title: 'Explore',
+        title: context.tr('bottom_navigator.explore'),
         textStyle: TextStyle(
           fontSize: 12, // Kích thước chữ
           fontWeight: FontWeight.bold, // Chữ in đậm
@@ -127,7 +128,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
             BlendMode.srcIn,
           ),
         ),
-        title: 'Forum',
+        title: context.tr('bottom_navigator.forum'),
         textStyle: TextStyle(
           fontSize: 12, // Kích thước chữ
           fontWeight: FontWeight.bold, // Chữ in đậm
@@ -149,7 +150,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
             BlendMode.srcIn,
           ),
         ),
-        title: 'Profile',
+        title: context.tr('bottom_navigator.profile'),
         textStyle: TextStyle(
           fontSize: 12, // Kích thước chữ
           fontWeight: FontWeight.bold, // Chữ in đậm

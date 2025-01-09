@@ -7,9 +7,11 @@ class AppOulineButton extends StatelessWidget {
   final IconData? icon;
   final double? width;
   final double? height;
+  final bool isActive;
   final void Function()? onPressed;
 
   const AppOulineButton({
+    this.isActive = false,
     super.key,
     required this.text,
     this.icon,
@@ -39,7 +41,10 @@ class AppOulineButton extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  Icon(icon, color: ThemeColor.primary),
+                  Icon(icon,
+                      color: isActive == true
+                          ? ThemeColor.primary
+                          : ThemeColor.lightGray),
                 ],
               ),
       ),

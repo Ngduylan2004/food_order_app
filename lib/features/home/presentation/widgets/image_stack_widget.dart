@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
 import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
@@ -56,7 +57,7 @@ class ImageStackWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(width: 50),
-            Text('Discover more dishes\nby exploring what’s new',
+            Text(context.tr('home_screen.discover_more_dishes_title'),
                 style: context.bodyRegular500Style?.copyWith(
                   color: ThemeColor.black,
                 )),

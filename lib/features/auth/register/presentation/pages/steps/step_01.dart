@@ -6,10 +6,17 @@ import 'package:food_order_app/core/resources/dimens.dart';
 import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
 import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
 import 'package:food_order_app/features/auth/register/presentation/bloc/register_bloc.dart';
+import 'package:food_order_app/features/language/presentation/bloc/language_bloc.dart';
 
-class Step01 extends StatelessWidget {
+class Step01 extends StatefulWidget {
   const Step01({super.key});
 
+  @override
+  State<Step01> createState() => _Step01State();
+}
+
+class _Step01State extends State<Step01> {
+  String isLanguage = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,21 +43,43 @@ class Step01 extends StatelessWidget {
                   color: const Color(0xFF354D35), fontWeight: FontWeight.w400),
             ),
             const SizedBox(height: Dimens.marginVerticalMedium),
-            const Wrap(
+            Wrap(
               spacing: 5, // Khoảng cách giữa các phần tử
               runSpacing: 8, // Khoảng cách giữa các dòng
-              alignment:
-                  WrapAlignment.start, // Căn chỉnh các phần tử theo chiều ngang
+              alignment: WrapAlignment.start,
               children: [
                 AppOulineButton(
+                  onPressed: () {
+                    _changeLanguage('en');
+
+                    context
+                        .read<LanguageBloc>()
+                        .add(LanguageChanged(const Locale('en', 'US')));
+                  },
+                  isActive: isLanguage == 'en',
                   text: 'English',
-                  icon: Icons.check_circle_outline,
-                ),
-                AppOulineButton(
-                  text: 'Spanish',
                   icon: Icons.check_circle,
                 ),
                 AppOulineButton(
+                  onPressed: () {
+                    _changeLanguage('vi');
+                    context
+                        .read<LanguageBloc>()
+                        .add(LanguageChanged(const Locale('vi', 'VN')));
+                  },
+                  text: 'VietNam',
+                  icon: Icons.check_circle,
+                  isActive: isLanguage == 'vi',
+                ),
+                AppOulineButton(
+                  onPressed: () {
+                    _changeLanguage('fr');
+
+                    context
+                        .read<LanguageBloc>()
+                        .add(LanguageChanged(const Locale('fr', 'FR')));
+                  },
+                  isActive: isLanguage == 'fr',
                   text: 'French',
                   icon: Icons.check_circle,
                 )
@@ -114,5 +143,11 @@ class Step01 extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _changeLanguage(String language) {
+    setState(() {
+      isLanguage = language;
+    });
   }
 }

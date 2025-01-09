@@ -17,6 +17,4 @@ class ThemeColor {
   static const Color red = Color(0xFFF85657);
   static const Color yellow = Colors.yellow;
   static const Color lightYellow = Color(0xFFFFA909);
-
-  // Xám nhạt
 }

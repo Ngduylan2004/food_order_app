@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order_app/core/resources/dimens.dart';
 import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
@@ -32,7 +33,7 @@ class _ForumScreenState extends State<ForumScreen> {
                 padding: const EdgeInsets.only(
                     top: Dimens.paddingVerticalDashboardTop),
                 child: Text(
-                  'Forum',
+                  context.tr('forum_screen.title'),
                   style: context.heading4Style,
                 ),
               ),
@@ -76,7 +77,7 @@ class _ForumScreenState extends State<ForumScreen> {
                           ontap: () {
                             _onIndex(1);
                           },
-                          text: 'Featured Topic',
+                          text: context.tr('forum_screen.featured_topics'),
                         ),
                         const SizedBox(
                           width: 5,
@@ -86,7 +87,7 @@ class _ForumScreenState extends State<ForumScreen> {
                           ontap: () {
                             _onIndex(2);
                           },
-                          text: 'Challenges',
+                          text: context.tr('forum_screen.challenges'),
                         ),
                         const SizedBox(
                           width: 5,
@@ -96,7 +97,7 @@ class _ForumScreenState extends State<ForumScreen> {
                           ontap: () {
                             _onIndex(3);
                           },
-                          text: 'Groups',
+                          text: context.tr('forum_screen.groups'),
                         ),
                       ],
                     ),

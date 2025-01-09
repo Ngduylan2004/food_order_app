@@ -1,6 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:food_order_app/core/component/button/app_ouline_button.dart';
 import 'package:food_order_app/core/component/button/app_solid_button.dart';
 import 'package:food_order_app/core/component/textFiled/auth_text_filed.dart';
@@ -21,6 +22,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
+      lazy: false,
       create: (context) => ProfileBloc()..add(ProfileEvent()),
       child: Scaffold(
         backgroundColor: ThemeColor.white,
@@ -35,14 +37,28 @@ class ProfileScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                     top: Dimens.paddingVerticalDashboardTop),
                 child: Text(
-                  'Profile',
+                  context.tr('profile_screen.title'),
                   style: context.heading4Style,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(
                     top: Dimens.paddingVerticalDashboardTop),
-                child: SvgPicture.asset(
+                child:
+                    //  PopupMenuButton(
+
+                    //   itemBuilder: (context) {
+                    //     return [
+                    //       const PopupMenuItem<String>(
+                    //           value: 'Option 1', child: Text('Option 1')),
+                    //       const PopupMenuItem<String>(
+                    //           value: 'Option 2', child: Text('Option 2')),
+                    //       const PopupMenuItem<String>(
+                    //           value: 'Option 3', child: Text('Option 3')),
+                    //     ];
+                    //   },
+                    // )
+                    SvgPicture.asset(
                   'assets/image/icons/solar_settings-linear.svg',
                   width: 32,
                   height: 32,
@@ -95,7 +111,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               const SizedBox(height: 10),
                               AppOulineButton(
-                                text: 'Edit Profile',
+                                text: context.tr('profile_screen.edit_profile'),
                                 onPressed: () {
                                   _showEditProfileDialog(context);
                                 },
@@ -111,9 +127,10 @@ class ProfileScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('My Recipes', style: context.heading5Style),
+                    Text(context.tr('profile_screen.my_recipes'),
+                        style: context.heading5Style),
                     Text(
-                      'View all',
+                      context.tr('profile_screen.view_all'),
                       style: context.bodyRegular500Style?.copyWith(
                         color: ThemeColor.primary,
                       ),
@@ -126,9 +143,10 @@ class ProfileScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Saved Recipes', style: context.heading5Style),
+                    Text(context.tr('profile_screen.saved_recipes'),
+                        style: context.heading5Style),
                     Text(
-                      'View all',
+                      context.tr('profile_screen.view_all'),
                       style: context.bodyRegular500Style?.copyWith(
                         color: ThemeColor.primary,
                       ),
@@ -141,9 +159,10 @@ class ProfileScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Saved Challenges', style: context.heading5Style),
+                    Text(context.tr('profile_screen.saved_challenges'),
+                        style: context.heading5Style),
                     Text(
-                      'View all',
+                      context.tr('profile_screen.view_all'),
                       style: context.bodyRegular500Style?.copyWith(
                         color: ThemeColor.primary,
                       ),
@@ -179,14 +198,14 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   // Tiêu đề
                   Text(
-                    'Edit Profile',
+                    context.tr('profile_screen.edit_profile'),
                     style: context.heading5Style,
                   ),
                   const SizedBox(height: Dimens.marginVerticalMedium),
                   // Trường Full Name
                   AuthTextFiled(
                       controller: fullNameController,
-                      label: 'Full Name',
+                      label: context.tr('profile_screen.name'),
                       prefixIcon: Icons.person,
                       obscureText: false,
                       onTap: () {},
@@ -197,7 +216,7 @@ class ProfileScreen extends StatelessWidget {
                   // Trường Email
                   AuthTextFiled(
                       controller: emailController,
-                      label: 'Email',
+                      label: context.tr('profile_screen.email'),
                       prefixIcon: Icons.email,
                       obscureText: false,
                       onTap: () {},
@@ -208,7 +227,7 @@ class ProfileScreen extends StatelessWidget {
                   // Nút Lưu
                   AppSolidButton(
                     onPressed: () {},
-                    text: 'Save',
+                    text: context.tr('profile_screen.save'),
                   ),
                 ],
               ),

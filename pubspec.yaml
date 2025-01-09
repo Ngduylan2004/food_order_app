@@ -39,6 +39,9 @@ dependencies:
   google_sign_in: ^6.2.2
   loading_overlay: ^0.4.2
   persistent_bottom_nav_bar: ^6.2.1
+  easy_localization: ^3.0.7
+  animated_text_kit: ^4.2.2 #dùng để animation chạy chữ
+  
 
  
 
@@ -70,6 +73,9 @@ flutter:
     - assets/image/icons/
     - assets/image/icons/detail/
     - assets/image/icons/auth/
+    - assets/translations/
+
+  
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_order_app/core/resources/dimens.dart';
@@ -15,7 +16,7 @@ class GroupScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'All Groups',
+              context.tr('forum_screen.join_now'),
               style: context.heading6Style,
             ),
             IconButton(

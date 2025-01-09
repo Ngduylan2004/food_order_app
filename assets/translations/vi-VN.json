@@ -1,0 +1,60 @@
+{
+  "home_screen": {
+    "title": "Khám Phá",
+    "recent_recipes_title": "Công Thức Mới",
+    "view_all_title": "Xem Tất Cả",
+    "recommended_title": "Khuyến Nghị",
+    "discover_more_dishes_title": "Khám Phá Các Món Mới"
+  },
+  "grocery_screen": {
+    "title": "Tạp Hóa",
+    "search_hint": "Tìm kiếm..."
+  },
+  "explore_screen": {
+    "title": "Tìm Kiếm",
+    "search_hint": "Tìm kiếm...",
+    "category_title": "Danh Mục"
+  },
+  "sup_category_screen": {
+    "sort_by_title": "Sắp Xếp",
+    "most_popular": "Phổ Biến"
+  },
+  "recipe_detail_screen": {
+    "likes": "Thích",
+    "overview": "Tổng Quan",
+    "ingredients": "Nguyên Liệu",
+    "directions": "Hướng Dẫn"
+  },
+  "forum_screen": {
+    "title": "Diễn Đàn",
+    "featured_topics": "Chủ Đề Nổi Bật",
+    "challenges": "Thử Thách",
+    "groups": "Nhóm",
+    "upcoming_challenges": "Thử Thách Sắp Tới",
+    "join_now": "Tham Gia",
+    "all_groups": "Tất Cả Nhóm",
+    "joined": "Đã Tham Gia",
+    "search_hint": "Thảo luận...",
+    "likes": "Thích",
+    "replies": "Phản Hồi"
+  },
+  "profile_screen": {
+    "title": "Hồ Sơ",
+    "edit_profile": "Chỉnh Sửa",
+    "my_recipes": "Công Thức Của Tôi",
+    "saved_recipes": "Công Thức Đã Lưu",
+    "saved_challenges": "Thử Thách Đã Lưu",
+    "view_all": "Xem Tất Cả",
+    "name": "Họ Tên",
+    "email": "Địa Chỉ",
+    "save":"Lưu"
+
+  },
+     "bottom_navigator": {
+    "recipes": "Công Thức",
+    "grocery": "Mua Sắm",
+    "explore": "Khám Phá",
+    "forum": "Cộng Đồng",
+    "profile": "Hồ Sơ"
+  }
+}

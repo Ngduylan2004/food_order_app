@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
 import 'package:food_order_app/core/resources/theme/text/app_text_theme.dart';
@@ -13,7 +14,7 @@ class ChallengesScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Upcoming Challenges',
+            context.tr('forum_screen.upcoming_challenges'),
             style: context.heading6Style,
           ),
           Image.asset('assets/image/icons/setting-4.png')

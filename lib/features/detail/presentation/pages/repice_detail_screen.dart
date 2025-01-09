@@ -1,4 +1,5 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
@@ -174,7 +175,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                           width: 10,
                         ),
                         Text(
-                          '273 likes',
+                          '27 ${context.tr('recipe_detail_screen.likes')}',
                           style: context.bodyRegular500Style,
                         ),
                       ],
@@ -192,7 +193,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             Align(
               alignment: Alignment.center,
               child: SizedBox(
-                width: MediaQuery.sizeOf(context).width - 40,
+                width: MediaQuery.sizeOf(context).width - 20,
                 child: ButtonsTabBar(
                   radius: 30,
                   height: 50, // Chiều cao của các tab
@@ -210,10 +211,10 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     color: ThemeColor.lightBlack,
                     fontWeight: FontWeight.bold,
                   ),
-                  tabs: const [
-                    Tab(text: 'Overview'),
-                    Tab(text: 'Ingredients'),
-                    Tab(text: 'Directions'),
+                  tabs: [
+                    Tab(text: context.tr('recipe_detail_screen.overview')),
+                    Tab(text: context.tr('recipe_detail_screen.ingredients')),
+                    Tab(text: context.tr('recipe_detail_screen.directions')),
                   ],
                 ),
               ),

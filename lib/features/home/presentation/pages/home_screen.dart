@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order_app/core/resources/dimens.dart';
 import 'package:food_order_app/core/resources/theme/colors/theme_color.dart';
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.only(
                   top: Dimens.paddingVerticalDashboardTop),
               child: Text(
-                'Explore Recipes',
+                context.tr('home_screen.title'),
                 style: context.heading4Style,
               ),
             ),
@@ -132,22 +133,36 @@ class HomeScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: Dimens.marginVerticalMedium),
-              InkWell(
-                  onTap: () {
-                    context.goNamed('login');
-                  },
-                  child: Text('quay về đăng nhập',
-                      style: context.bodySmall500Style)),
+              Row(
+                children: [
+                  // InkWell(
+                  //   onTap: () {
+                  //     context.read<LanguageBloc>().add(LanguageEvent());
+                  //   },
+                  //   child: const Icon(Icons.language),
+                  // ),
+                  InkWell(
+                      onTap: () {
+                        context.goNamed('login');
+                      },
+                      child: Text('quay về đăng nhập',
+                          style: context.bodySmall500Style)),
+                ],
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Recent Recipes', style: context.heading5Style),
-                  Text('View All',
+                  Text(context.tr('home_screen.recent_recipes_title'),
+                      style: context.heading5Style),
+                  Text(
+                      context.tr(
+                        'home_screen.view_all_title',
+                      ),
                       style: context.bodyLarge500Style
                           ?.copyWith(color: ThemeColor.primary)),
                 ],
               ),
-              const SizedBox(height: Dimens.marginVertical),
+              const SizedBox(height: Dimens.marginVerticalSmall),
               const SliderWidget(),
               const SizedBox(height: Dimens.marginVerticalMedium),
               // Image Stack Widget
@@ -156,8 +171,9 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Recommended', style: context.heading5Style),
-                  Text('View all',
+                  Text(context.tr('home_screen.recommended_title'),
+                      style: context.heading5Style),
+                  Text(context.tr('home_screen.view_all_title'),
                       style: context.bodyLarge500Style
                           ?.copyWith(color: ThemeColor.primary)),
                 ],

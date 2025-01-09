@@ -1,0 +1,60 @@
+{
+    "home_screen": {
+      "title": "Explorer les recettes",
+      "recent_recipes_title": "Recettes récentes",
+      "view_all_title": "Voir tout",
+      "recommended_title": "Recommandé",
+      "discover_more_dishes_title": "Découvrez plus de plats\n en explorant ce\n qui est nouveau"
+    },
+    "grocery_screen": {
+      "title": "Épicerie",
+      "search_hint": "Recherchez n'importe quoi..."
+    },
+    "explore_screen": {
+      "title": "Rechercher",
+      "search_hint": "Recherchez n'importe quoi...",
+      "category_title": "Catégorie"
+    },
+    "sup_category_screen": {
+      "sort_by_title": "Trier par",
+      "most_popular": "Les plus populaires"
+    },
+    "recipe_detail_screen": {
+      "likes": "aimes",
+      "overview": "Aperçu",
+      "ingredients": "Ingrédients",
+      "directions": "Directions"
+    },
+    "forum_screen": {
+      "title": "Forum",
+      "featured_topics": "Sujets en vedette",
+      "challenges": "Défis",
+      "groups": "Groupes",
+      "upcoming_challenges": "Défis à venir",
+      "join_now": "Rejoindre maintenant",
+      "all_groups": "Tous les groupes",
+      "joined": "Rejoint",
+      "search_hint": "Discutez ici...",
+      "likes": "aimes",
+      "replies": "réponses"
+    },
+    "profile_screen": {
+      "title": "Profil",
+      "edit_profile": "Modifier le profil",
+      "my_recipes": "Mes recettes",
+      "saved_recipes": "Recettes enregistrées",
+      "saved_challenges": "Défis enregistrés",
+      "view_all": "Voir tout",
+      "name": "Nom complet",
+      "email": "Email",
+      "save": "Sauvegarder"
+    },
+    "bottom_navigator": {
+      "recipes": "Recettes",
+      "grocery": "Épicerie",
+      "explore": "Explorer",
+      "forum": "Forum",
+      "profile": "Profil"
+    }
+  }
+  

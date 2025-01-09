@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_order_app/core/resources/dimens.dart';
@@ -21,7 +22,8 @@ class ExploreScreen extends StatelessWidget {
         title: Padding(
           padding:
               const EdgeInsets.only(top: Dimens.paddingVerticalDashboardTop),
-          child: Text('Search', style: context.heading4Style),
+          child: Text(context.tr('explore_screen.title'),
+              style: context.heading4Style),
         ),
       ),
       body: SingleChildScrollView(
@@ -39,7 +41,7 @@ class ExploreScreen extends StatelessWidget {
                   filled: true, //để đặt màu nền
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 18), //khoảng cách giữa nội dung và viền
-                  hintText: 'Search anything...',
+                  hintText: context.tr('explore_screen.search_hint'),
                   hintStyle: context.bodyRegular500Style?.copyWith(
                     color: ThemeColor.lightBlack,
                   ),
@@ -70,7 +72,8 @@ class ExploreScreen extends StatelessWidget {
                 enableInteractiveSelection: true,
               ),
               const SizedBox(height: Dimens.marginVerticalMedium),
-              Text('Categories', style: context.heading5Style),
+              Text(context.tr('explore_screen.category_title'),
+                  style: context.heading5Style),
               const SizedBox(height: Dimens.marginVerticalMedium),
               const ListCategoryWidget(),
             ],

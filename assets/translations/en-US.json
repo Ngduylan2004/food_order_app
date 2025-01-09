@@ -1,0 +1,62 @@
+{
+    "home_screen": {
+      "title": "Explore Recipes",
+      "recent_recipes_title": "Recent Recipes",
+      "view_all_title": "View All",
+      "recommended_title": "Recommended",
+      "discover_more_dishes_title": "Discover more dishes by\n exploring what’s new"
+    },
+    "grocery_screen": {
+      "title": "Grocery",
+      "search_hint": "Search anything..."
+    
+    },
+    "explore_screen": {
+      "title": "Search",
+      "search_hint": "Search anything...",
+      "category_title": "Category"
+    },
+    
+    "sup_category_screen": {
+      "sort_by_title": "Sort By",
+      "most_popular": "Most Popular"
+    },
+    "recipe_detail_screen": {
+      "likes": "likes",
+      "overview": "Overview",
+      "ingredients": "Ingredients",
+      "directions": "Directions"
+    },
+    "forum_screen": {
+      "title": "Forum",
+      "featured_topics": "Featured Topics",
+      "challenges": "Challenges",
+      "groups": "Groups",
+      "upcoming_challenges": "Upcoming Challenges",
+      "join_now": "Join Now",
+      "all_groups": "All Groups",
+      "joined": "Joined",
+      "search_hint": "Discuss here...",
+      "likes": "likes",
+      "replies": "replies"
+    },
+    "profile_screen": {
+      "title": "Profile",
+      "edit_profile": "Edit Profile",
+      "my_recipes": "My Recipes",
+      "saved_recipes": "Saved Recipes",
+      "saved_challenges": "Saved Challenges",
+      "view_all": "View All",
+      "name": "Full Name",
+    "email": "Email",
+    "save":"Save" 
+    },
+    "bottom_navigator": {
+      "recipes": "Recipes",
+      "grocery": "Grocery",
+      "explore": "Explore",
+      "forum": "Forum",
+      "profile": "Profile"
+    }
+  }
+  
